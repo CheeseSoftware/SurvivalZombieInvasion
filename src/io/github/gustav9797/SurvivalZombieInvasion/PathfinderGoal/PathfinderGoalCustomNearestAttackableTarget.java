@@ -1,9 +1,8 @@
-package io.github.gustav9797.ZombieInvasion.PathfinderGoal;
+package io.github.gustav9797.SurvivalZombieInvasion.PathfinderGoal;
 
 import java.util.Random;
 
-import io.github.gustav9797.ZombieInvasion.Arena;
-
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.craftbukkit.v1_7_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
@@ -16,14 +15,12 @@ public class PathfinderGoalCustomNearestAttackableTarget extends PathfinderGoalC
 
 	private final int attackCheckFrequency;
 	private EntityLiving target;
-	private Arena arena;
 	private Random r = new Random();
 
-	public PathfinderGoalCustomNearestAttackableTarget(EntityCreature entitycreature, int attackCheckFrequency, Arena arena)
+	public PathfinderGoalCustomNearestAttackableTarget(EntityCreature entitycreature, int attackCheckFrequency)
 	{
 		super(entitycreature);
 		this.attackCheckFrequency = attackCheckFrequency;
-		this.arena = arena;
 		this.a(1);
 	}
 
@@ -33,14 +30,15 @@ public class PathfinderGoalCustomNearestAttackableTarget extends PathfinderGoalC
 		{
 			return false;
 		}
-		else if (arena != null && this.entity.getGoalTarget() == null)
+		else if (this.entity.getGoalTarget() == null)
 		//else if(this.entity.getGoalTarget() == null)
 		{
 			// this.target = (EntityLiving) list.get(0);
 			//Player[] players = Bukkit.getServer().getOnlinePlayers();
 			Player closestPlayer = null;
 			double closestPlayerDistance = Double.MAX_VALUE;
-			for(Player player : arena.players)
+			
+			for(Player player : Bukkit.getOnlinePlayers())
 			{
 				double distance = player.getLocation().distance(this.entity.getBukkitEntity().getLocation());
 				if(distance < closestPlayerDistance && player.getGameMode() == GameMode.SURVIVAL)

@@ -1,8 +1,4 @@
-package io.github.gustav9797.ZombieInvasion.Entity;
-
-import io.github.gustav9797.ZombieInvasion.Arena;
-import io.github.gustav9797.ZombieInvasion.PathfinderGoal.PathfinderGoalFindBreakBlock;
-import io.github.gustav9797.ZombieInvasion.PathfinderGoal.PathfinderGoalWalkToTile;
+package io.github.gustav9797.SurvivalZombieInvasion.Entity;
 
 import java.lang.reflect.Field;
 import java.util.Random;
@@ -61,13 +57,6 @@ public class EntityBlockBreakingSkeleton extends EntitySkeleton implements ICust
 		this.targetSelector.a(2, new PathfinderGoalHurtByTarget(this, true));
 		this.a(0.6F, 1.8F);
 
-	}
-
-	public void setArena(Arena arena)
-	{
-		if (arena != null)
-			this.targetSelector.a(4, new PathfinderGoalWalkToTile(this, 1.2F, arena.getSpawnLocation()));
-		this.goalSelector.a(3, new PathfinderGoalFindBreakBlock(this, arena, 5));
 	}
 
 	public EntityHuman findNearbyVulnerablePlayer(double d0, double d1, double d2)

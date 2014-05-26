@@ -1,5 +1,5 @@
 name: ZombieInvasion
-main: io.github.gustav9797.ZombieInvasion.ZombieInvasion
+main: io.github.gustav9797.SurvivalZombieInvasion.ZombieInvasion
 version: 0.1
 softdepend: [OstEconomyPlugin, WorldEdit]
 commands:

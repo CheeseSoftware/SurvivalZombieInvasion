@@ -1,8 +1,4 @@
-package io.github.gustav9797.ZombieInvasion.Entity;
-
-import io.github.gustav9797.ZombieInvasion.Arena;
-import io.github.gustav9797.ZombieInvasion.PathfinderGoal.PathfinderGoalBreakBlock;
-import io.github.gustav9797.ZombieInvasion.PathfinderGoal.PathfinderGoalWalkToTile;
+package io.github.gustav9797.SurvivalZombieInvasion.Entity;
 
 import java.lang.reflect.Field;
 import java.util.Random;
@@ -122,23 +118,13 @@ public class EntityBlockBreakingVillager extends EntityVillager implements ICust
 
 		this.getNavigation().b(true);
 		this.goalSelector.a(6, new PathfinderGoalFloat(this));
-		this.goalSelector.a(7, new io.github.gustav9797.ZombieInvasion.PathfinderGoal.PathfinderGoalCustomMeleeAttack(this, EntityHuman.class, 1.0D, false));
+		this.goalSelector.a(7, new io.github.gustav9797.SurvivalZombieInvasion.PathfinderGoal.PathfinderGoalCustomMeleeAttack(this, EntityHuman.class, 1.0D, false));
 		this.goalSelector.a(8, new PathfinderGoalRandomStroll(this, 1.0D));
 		this.goalSelector.a(8, new PathfinderGoalLookAtPlayer(this, EntityHuman.class, 8.0F));
 		this.goalSelector.a(8, new PathfinderGoalRandomLookaround(this));
 		this.targetSelector.a(1, new PathfinderGoalHurtByTarget(this, true));
 		this.targetSelector.a(0, new PathfinderGoalNearestAttackableTarget(this, EntityHuman.class, 0, true));
 		this.a(0.6F, 1.8F);
-	}
-
-	public void setArena(Arena arena)
-	{
-		if (arena != null)
-			this.targetSelector.a(0, new PathfinderGoalWalkToTile(this, 1.0F, arena.getSpawnLocation()));
-		if (this.getProfession() == 3)
-			this.goalSelector.a(3, new PathfinderGoalBreakBlock(this, arena, true));
-		else if(this.getProfession() == 5)
-			this.goalSelector.a(3, new PathfinderGoalBreakBlock(this, arena, (random.nextInt(8) == 0)));
 	}
 
 	public EntityHuman findNearbyVulnerablePlayer(double d0, double d1, double d2)
