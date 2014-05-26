@@ -31,7 +31,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import ostkaka34.OstEconomyPlugin.IOstEconomy;
 import ostkaka34.OstEconomyPlugin.OstEconomyPlugin;
 
-public final class ZombieInvasion extends JavaPlugin implements Listener
+public final class SurvivalZombieInvasion extends JavaPlugin implements Listener
 {
 	LinkedList<CustomEntityType> entityTypes;
 	Random r = new Random();
@@ -51,8 +51,8 @@ public final class ZombieInvasion extends JavaPlugin implements Listener
 
 		this.registerEntities();
 		
-		ZombieInvasion.economyPlugin = (IOstEconomy) Bukkit.getPluginManager().getPlugin("OstEconomyPlugin");
-		if(ZombieInvasion.economyPlugin == null)
+		SurvivalZombieInvasion.economyPlugin = (IOstEconomy) Bukkit.getPluginManager().getPlugin("OstEconomyPlugin");
+		if(SurvivalZombieInvasion.economyPlugin == null)
 			this.getServer().getLogger().severe("Could not load economy!");
 
 		if (!configFile.exists())
@@ -166,9 +166,9 @@ public final class ZombieInvasion extends JavaPlugin implements Listener
 		this.Load();
 	}
 
-	public static ZombieInvasion getPlugin()
+	public static SurvivalZombieInvasion getPlugin()
 	{
-		return (ZombieInvasion) Bukkit.getPluginManager().getPlugin("ZombieInvasion");
+		return (SurvivalZombieInvasion) Bukkit.getPluginManager().getPlugin("ZombieInvasion");
 	}
 
 	public static OstEconomyPlugin getEconomyPlugin()
