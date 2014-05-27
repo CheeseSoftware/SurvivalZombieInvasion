@@ -3,9 +3,9 @@ package io.github.gustav9797.SurvivalZombieInvasion;
 import java.lang.reflect.Field;
 import java.util.Map;
 
-import net.minecraft.server.v1_7_R2.EntityInsentient;
-import net.minecraft.server.v1_7_R2.EntityTypes;
-import net.minecraft.server.v1_7_R2.IMonster;
+import net.minecraft.server.v1_7_R3.EntityInsentient;
+import net.minecraft.server.v1_7_R3.EntityTypes;
+import net.minecraft.server.v1_7_R3.IMonster;
 
 import org.bukkit.entity.EntityType;
 

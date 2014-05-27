@@ -4,17 +4,17 @@ import java.util.Random;
 
 import org.bukkit.Location;
 
-import net.minecraft.server.v1_7_R2.AttributeInstance;
-import net.minecraft.server.v1_7_R2.EntityCreature;
-import net.minecraft.server.v1_7_R2.EntityHuman;
-import net.minecraft.server.v1_7_R2.EntityLiving;
-import net.minecraft.server.v1_7_R2.EntityOwnable;
-import net.minecraft.server.v1_7_R2.EntityPlayer;
-import net.minecraft.server.v1_7_R2.GenericAttributes;
-import net.minecraft.server.v1_7_R2.MathHelper;
-import net.minecraft.server.v1_7_R2.PathEntity;
-import net.minecraft.server.v1_7_R2.PathPoint;
-import net.minecraft.server.v1_7_R2.PathfinderGoal;
+import net.minecraft.server.v1_7_R3.AttributeInstance;
+import net.minecraft.server.v1_7_R3.EntityCreature;
+import net.minecraft.server.v1_7_R3.EntityHuman;
+import net.minecraft.server.v1_7_R3.EntityLiving;
+import net.minecraft.server.v1_7_R3.EntityOwnable;
+import net.minecraft.server.v1_7_R3.EntityPlayer;
+import net.minecraft.server.v1_7_R3.GenericAttributes;
+import net.minecraft.server.v1_7_R3.MathHelper;
+import net.minecraft.server.v1_7_R3.PathEntity;
+import net.minecraft.server.v1_7_R3.PathPoint;
+import net.minecraft.server.v1_7_R3.PathfinderGoal;
 import net.minecraft.util.org.apache.commons.lang3.StringUtils;
 
 public abstract class PathfinderGoalCustomTarget extends PathfinderGoal
@@ -133,9 +133,9 @@ public abstract class PathfinderGoalCustomTarget extends PathfinderGoal
 			return false;
 		else
 		{
-			if (this.entity instanceof EntityOwnable && StringUtils.isNotEmpty(((EntityOwnable) this.entity).getOwnerName()))
+			if (this.entity instanceof EntityOwnable && StringUtils.isNotEmpty(((EntityOwnable) this.entity).getOwnerUUID()))
 			{
-				if (target instanceof EntityOwnable && ((EntityOwnable) this.entity).getOwnerName().equals(((EntityOwnable) target).getOwnerName()))
+				if (target instanceof EntityOwnable && ((EntityOwnable) this.entity).getOwnerUUID().equals(((EntityOwnable) target).getOwnerUUID()))
 				{
 					return false;
 				}

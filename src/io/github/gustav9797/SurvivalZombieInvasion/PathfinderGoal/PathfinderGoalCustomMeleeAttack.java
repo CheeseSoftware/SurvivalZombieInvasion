@@ -2,14 +2,14 @@ package io.github.gustav9797.SurvivalZombieInvasion.PathfinderGoal;
 
 import java.util.Random;
 
-import net.minecraft.server.v1_7_R2.DamageSource;
-import net.minecraft.server.v1_7_R2.Entity;
-import net.minecraft.server.v1_7_R2.EntityCreature;
-import net.minecraft.server.v1_7_R2.EntityLiving;
-import net.minecraft.server.v1_7_R2.MathHelper;
-import net.minecraft.server.v1_7_R2.PathEntity;
-import net.minecraft.server.v1_7_R2.PathfinderGoal;
-import net.minecraft.server.v1_7_R2.World;
+import net.minecraft.server.v1_7_R3.DamageSource;
+import net.minecraft.server.v1_7_R3.Entity;
+import net.minecraft.server.v1_7_R3.EntityCreature;
+import net.minecraft.server.v1_7_R3.EntityLiving;
+import net.minecraft.server.v1_7_R3.MathHelper;
+import net.minecraft.server.v1_7_R3.PathEntity;
+import net.minecraft.server.v1_7_R3.PathfinderGoal;
+import net.minecraft.server.v1_7_R3.World;
 
 public class PathfinderGoalCustomMeleeAttack extends PathfinderGoal
 {

@@ -11,11 +11,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.server.v1_7_R2.BiomeBase;
-import net.minecraft.server.v1_7_R2.BiomeMeta;
-import net.minecraft.server.v1_7_R2.EntityVillager;
-import net.minecraft.server.v1_7_R2.EntityZombie;
-import net.minecraft.server.v1_7_R2.EntitySkeleton;
+import net.minecraft.server.v1_7_R3.BiomeBase;
+import net.minecraft.server.v1_7_R3.BiomeMeta;
+import net.minecraft.server.v1_7_R3.EntityVillager;
+import net.minecraft.server.v1_7_R3.EntityZombie;
+import net.minecraft.server.v1_7_R3.EntitySkeleton;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -201,7 +201,7 @@ public final class SurvivalZombieInvasion extends JavaPlugin implements Listener
 		{
 			event.setCancelled(true);
 			EntityCreature monster = null;
-			net.minecraft.server.v1_7_R2.World mcWorld = ((CraftWorld) event.getLocation().getWorld()).getHandle();
+			net.minecraft.server.v1_7_R3.World mcWorld = ((CraftWorld) event.getLocation().getWorld()).getHandle();
 
 			switch (event.getEntityType())
 			{
