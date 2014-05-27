@@ -14,7 +14,7 @@ public class PathfinderGoalCustomNearestAttackableTarget extends PathfinderGoalC
 {
 
 	private final int attackCheckFrequency;
-	private EntityLiving target;
+	private Player target;
 	private Random r = new Random();
 
 	public PathfinderGoalCustomNearestAttackableTarget(EntityCreature entitycreature, int attackCheckFrequency)
@@ -30,7 +30,7 @@ public class PathfinderGoalCustomNearestAttackableTarget extends PathfinderGoalC
 		{
 			return false;
 		}
-		else if (this.entity.getGoalTarget() == null)
+		else if (this.entity.getGoalTarget() == null && this.entity.target == null)
 		//else if(this.entity.getGoalTarget() == null)
 		{
 			// this.target = (EntityLiving) list.get(0);
@@ -50,9 +50,8 @@ public class PathfinderGoalCustomNearestAttackableTarget extends PathfinderGoalC
 			
 			if(closestPlayer != null)
 			{
-				this.target= ((CraftPlayer)closestPlayer).getHandle();
-				this.entity.setGoalTarget(target);
-				//this.entity.target = this.target;
+				this.target = closestPlayer;
+				this.entity.setGoalTarget(((CraftPlayer)this.target).getHandle());
 				return true;
 			}
 		}
@@ -61,7 +60,8 @@ public class PathfinderGoalCustomNearestAttackableTarget extends PathfinderGoalC
 
 	public void c() // setup
 	{
-		this.entity.setGoalTarget(this.target);
+		if(this.entity.getGoalTarget() != ((CraftPlayer)this.target).getHandle())
+			this.entity.setGoalTarget(((CraftPlayer)this.target).getHandle());
 		super.c();
 	}
 }
